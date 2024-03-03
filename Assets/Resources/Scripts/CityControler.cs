@@ -14,10 +14,6 @@ public class CityControler : MonoBehaviour
     [SerializeField]
     float mapScale;
 
-    //well fuck
-    //I need to create city map from one PNG file. They must be divide into districts and create new Districts objects, with object center set in the middle of the districts
-    //bounds can be just radius of circle possible to put in the center of district and not be outside of it's bounds circle can show district state(like district in the previous concept)
-
     private void OnValidate()
     {
         //if added new district
@@ -39,7 +35,7 @@ public class CityControler : MonoBehaviour
         //if set sprite to array
         for (int i = 0; i < districtsSprites.Length; i++)
         {
-            districts[i].ChangeDistrict(districtsSprites[i]);
+            districts[i].SetSprite(districtsSprites[i]);
         }
     }
 
@@ -66,7 +62,7 @@ public class CityControler : MonoBehaviour
         districts[id] = districtsObj[id].GetComponent<District>();
         districts[id].Create(districtsObj[id].transform);
         districtsSprites[id] = GetSprite(id);
-        districts[id].ChangeDistrict(districtsSprites[id]);
+        districts[id].SetSprite(districtsSprites[id]);
     }
 
     private Sprite GetSprite(int number)

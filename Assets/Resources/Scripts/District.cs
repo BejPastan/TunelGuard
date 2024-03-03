@@ -61,9 +61,14 @@ public class District : MonoBehaviour
         image = districtObj.GetComponent<Image>();
     }
 
-    public void ChangeDistrict(Sprite sprite)
+    public void SetSprite(Sprite sprite)
     {
         image.sprite = sprite;
+    }
+
+    public void DeiverSupply(float deliveredSupply)
+    {
+        
     }
 }
 
